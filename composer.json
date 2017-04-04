@@ -1,21 +1,35 @@
 {
-    "name": "greeny/package-template",
-    "description": "Core files of any PHP package for easy setup",
-    "type": "library",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "greeny",
-            "email": "blatny.tomas@seznam.cz"
-        }
-    ],
-    "require": {},
-    "require-dev": {
-        "nette/tester": "^1.7",
-        "slevomat/coding-standard": "^2.0",
-        "consistence/coding-standard": "^0.13.0",
-        "jakub-onderka/php-parallel-lint": "^0.9.2",
-        "jakub-onderka/php-console-highlighter": "^0.3.2",
-        "phpstan/phpstan": "^0.6.4"
-    }
+	"name": "greeny/package-template",
+	"description": "Core files of any PHP package for easy setup",
+	"type": "library",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "greeny",
+			"email": "blatny.tomas@seznam.cz"
+		}
+	],
+	"require": {},
+	"require-dev": {
+		"nette/tester": "^1.7",
+		"slevomat/coding-standard": "^2.0",
+		"consistence/coding-standard": "^0.13.0",
+		"jakub-onderka/php-parallel-lint": "^0.9.2",
+		"jakub-onderka/php-console-highlighter": "^0.3.2",
+		"phpstan/phpstan": "^0.6.4"
+	},
+	"scripts": {
+		"build": [
+			"@check",
+			"@test"
+		],
+		"check": [
+			"vendor/bin/parallel-lint -e php,phpt src tests",
+			"vendor/bin/phpcs --standard=tests/ruleset.xml --extensions=php,phpt --encoding=utf-8 --tab-width=4 -sp src tests",
+			"vendor/bin/phpstan analyse -l 5 -c tests/phpstan.neon src tests"
+		],
+		"test": [
+			"vendor/bin/tester tests -s -c tests/php-unix.ini -p php"
+		]
+	}
 }
