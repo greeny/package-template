@@ -1,0 +1,16 @@
+{
+    "name": "__VENDOR__/__PACKAGE_NAME__",
+    "description": "__DESCRIPTION__",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "greeny",
+            "email": "blatny.tomas@seznam.cz"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "nette/tester": "^1.7"
+    }
+}

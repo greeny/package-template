@@ -1,2 +1,7 @@
-# package-core
-Core files of any PHP package for easy setup
+# __TITLE__
+
+__DESCRIPTION__
+
+## Installation
+
+	composer require __VENDOR__/__PACKAGE_NAME__

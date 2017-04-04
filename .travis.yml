@@ -1,0 +1,17 @@
+language: php
+php:
+    - 7.0
+    - 7.1
+
+script:
+    - vendor/bin/tester tests -s -c tests/php-unix.ini
+
+before_script:
+    - travis_retry composer install --no-interaction --prefer-dist
+    - if [ "$coverage" == "on" ]; then coverageArgs="-p phpdbg --coverage ./coverage.xml --coverage-src ./src"; fi
+
+sudo: false
+
+cache:
+    directories:
+        - $HOME/.composer/cache

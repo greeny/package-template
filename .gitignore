@@ -1,0 +1,6 @@
+# Package stuff
+/vendor
+/composer.lock
+
+# IDE stuff
+.idea
