@@ -4,14 +4,18 @@ php:
     - 7.1
 
 script:
+    - vendor/bin/parallel-lint -e php,phpt src tests
+    - vendor/bin/phpcs --standard=tests/ruleset.xml --extensions=php,phpt --encoding=utf-8 --tab-width=4 -sp src tests
     - vendor/bin/tester tests -s -c tests/php-unix.ini
 
 before_script:
     - travis_retry composer install --no-interaction --prefer-dist
-    - if [ "$coverage" == "on" ]; then coverageArgs="-p phpdbg --coverage ./coverage.xml --coverage-src ./src"; fi
 
 sudo: false
 
 cache:
     directories:
         - $HOME/.composer/cache
+
+notifications:
+    email: flase

@@ -11,6 +11,10 @@
     ],
     "require": {},
     "require-dev": {
-        "nette/tester": "^1.7"
+        "nette/tester": "^1.7",
+        "slevomat/coding-standard": "^2.0",
+        "consistence/coding-standard": "^0.13.0",
+        "jakub-onderka/php-parallel-lint": "^0.9.2",
+        "jakub-onderka/php-console-highlighter": "^0.3.2"
     }
 }
