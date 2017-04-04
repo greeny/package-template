@@ -1,6 +1,6 @@
 {
-    "name": "__VENDOR__/__PACKAGE_NAME__",
-    "description": "__DESCRIPTION__",
+    "name": "greeny/package-template",
+    "description": "Core files of any PHP package for easy setup",
     "type": "library",
     "license": "MIT",
     "authors": [
