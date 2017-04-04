@@ -1,7 +1,16 @@
-# __TITLE__
+# Package template for PHP
 
-__DESCRIPTION__
+This is a template for PHP library. It features pre-installed libraries:
+- nette/tester
+- slevomat/coding-standard
+- consistence/coding-standard
+- jakub-onderka/php-parallel-lint
+- phpstan/phpstan
 
-## Installation
+It also has .travis.yml file for fast setup.
 
-	composer require __VENDOR__/__PACKAGE_NAME__
+## Starting new package
+
+	composer create-project greeny/package-template YourAwesomeProjectName
+
+Feel free to use this and/or suggest changes. I am open to anything.
