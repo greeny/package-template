@@ -6,6 +6,7 @@ php:
 script:
     - vendor/bin/parallel-lint -e php,phpt src tests
     - vendor/bin/phpcs --standard=tests/ruleset.xml --extensions=php,phpt --encoding=utf-8 --tab-width=4 -sp src tests
+    - vendor/bin/phpstan analyse -l 5 -c tests/phpstan.neon src tests
     - vendor/bin/tester tests -s -c tests/php-unix.ini
 
 before_script:
