@@ -9,6 +9,11 @@
 			"email": "blatny.tomas@seznam.cz"
 		}
 	],
+	"autoload": {
+		"psr-4": {
+			"YourNamespace\\": "src/"
+		}
+	},
 	"require": {},
 	"require-dev": {
 		"nette/tester": "^1.7",
